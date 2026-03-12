@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# 💰 Gerenciador Financeiro Premium
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um aplicativo moderno e robusto para controle de finanças pessoais, com suporte a múltiplas moedas (EUR/BRL), projeções futuras e uma interface sofisticada com efeito glassmorphism.
 
-## Available Scripts
+![Preview](public/logo512.png) 
 
-In the project directory, you can run:
+## ✨ Funcionalidades
 
-### `npm start`
+- **Controle de Transações**: Adicione, edite e remova receitas e despesas com facilidade.
+- **Múltiplas Moedas**: Acompanhe seu saldo em Euro (EUR) e Real (BRL) com taxa de câmbio em tempo real.
+- **Projeções Inteligentes**: Visualize suas receitas e despesas futuras para um planejamento financeiro eficaz.
+- **Interface Premium**: Design moderno em Dark Mode com efeitos de vidro, animações suaves e total responsividade.
+- **Banco de Dados Local**: Utiliza SQLite para máxima performance e funcionamento offline, sem necessidade de configurações complexas de nuvem.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Tecnologias Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React 19**
+- **CSS3** (Custom Properties, Glassmorphism, Flexbox/Grid)
+- **React Icons**
+- **Date-fns**
 
-### `npm test`
+### Backend
+- **Node.js & Express**
+- **SQLite** (via `better-sqlite3`)
+- **CORS & Dotenv**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Como Rodar o Projeto
 
-### `npm run build`
+### Pré-requisitos
+- Node.js instalado (v18+)
+- npm ou yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instalação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone o repositório:
+```bash
+git clone https://github.com/mannowell/finance.git
+cd finance
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Instale as dependências:
+```bash
+npm install
+```
 
-### `npm run eject`
+### Execução
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para rodar o projeto, você precisará de dois terminais abertos:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Terminal 1 (Backend):**
+```bash
+npm start
+```
+*O servidor rodará na porta 5001.*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Terminal 2 (Frontend):**
+```bash
+npm run client
+```
+*O dashboard abrirá em [http://localhost:3000](http://localhost:3000).*
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Estrutura do Projeto
 
-## Learn More
+- `/src/components`: Componentes modulares do React.
+- `/routes`: Handlers da API Express.
+- `/db`: Inicialização e conexão com o banco de dados SQLite.
+- `database.sqlite`: Arquivo de banco de dados gerado automaticamente.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Desenvolvido por [Manno](https://github.com/mannowell)
