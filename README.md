@@ -1,4 +1,4 @@
-# 💰 Gerenciador Financeiro Premium
+# 💰 Gerenciador Financeiro
 
 Um aplicativo moderno e robusto para controle de finanças pessoais, com suporte a múltiplas moedas (EUR/BRL), projeções futuras e uma interface sofisticada com efeito glassmorphism.
 
