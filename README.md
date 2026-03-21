@@ -2,7 +2,7 @@
 
 Um aplicativo para controle de finanças pessoais, com suporte a múltiplas moedas (EUR/BRL), projeções futuras e uma interface sofisticada com efeito glassmorphism.
 
-![Preview](public/logo512.png) 
+> **Aplicativo Full-Stack estruturado com React 19 no Frontend e API REST Express/Node.js com SQLite no Backend.**
 
 ## ✨ Funcionalidades
 
