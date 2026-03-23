@@ -2,7 +2,9 @@
 
 Um aplicativo para controle de finanças pessoais, com suporte a múltiplas moedas (EUR/BRL), projeções futuras e uma interface sofisticada com efeito glassmorphism.
 
-> **Aplicativo Full-Stack estruturado com React 19 no Frontend e API REST Express/Node.js com SQLite no Backend.**
+> **🚀 [Ver Demonstração Online](https://mannowell.github.io/Gerenciador_Finance/)**
+>
+> **Aplicativo Estático Moderno estruturado com React 19 e armazenamento seguro via `localStorage`.**
 
 ## ✨ Funcionalidades
 
@@ -10,22 +12,17 @@ Um aplicativo para controle de finanças pessoais, com suporte a múltiplas moed
 - **Múltiplas Moedas**: Acompanhe seu saldo em Euro (EUR) e Real (BRL) com taxa de câmbio em tempo real.
 - **Projeções Inteligentes**: Visualize suas receitas e despesas futuras para um planejamento financeiro eficaz.
 - **Interface Premium**: Design moderno em Dark Mode com efeitos de vidro, animações suaves e total responsividade.
-- **Banco de Dados Local**: Utiliza SQLite para máxima performance e funcionamento offline, sem necessidade de configurações complexas de nuvem.
+- **Privacidade & Velocidade**: Utiliza `localStorage` no navegador para persistência de dados. Extremamente rápido e seguro (os dados nunca saem da sua máquina).
 
 ## 🚀 Tecnologias Utilizadas
 
-### Frontend
-- **React 19**
+- **React 19** (Frontend SPA)
+- **Local Storage** (Persistência de dados offline)
 - **CSS3** (Custom Properties, Glassmorphism, Flexbox/Grid)
-- **React Icons**
-- **Date-fns**
+- **React Icons** & **Date-fns**
+- **ExchangeRate-API** (Taxas de câmbio em tempo real)
 
-### Backend
-- **Node.js & Express**
-- **SQLite** (via `better-sqlite3`)
-- **CORS & Dotenv**
-
-## 📦 Como Rodar o Projeto
+## 📦 Como Rodar Localmente
 
 ### Pré-requisitos
 - Node.js instalado (v18+)
@@ -35,8 +32,8 @@ Um aplicativo para controle de finanças pessoais, com suporte a múltiplas moed
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/mannowell/finance.git
-cd finance
+git clone https://github.com/mannowell/Gerenciador_Finance.git
+cd Gerenciador_Finance
 ```
 
 2. Instale as dependências:
@@ -46,15 +43,8 @@ npm install
 
 ### Execução
 
-Para rodar o projeto, você precisará de dois terminais abertos:
+Para rodar o projeto localmente:
 
-**Terminal 1 (Backend):**
-```bash
-npm start
-```
-*O servidor rodará na porta 5001.*
-
-**Terminal 2 (Frontend):**
 ```bash
 npm run client
 ```
@@ -63,9 +53,9 @@ npm run client
 ## 🛠️ Estrutura do Projeto
 
 - `/src/components`: Componentes modulares do React.
-- `/routes`: Handlers da API Express.
-- `/db`: Inicialização e conexão com o banco de dados SQLite.
-- `database.sqlite`: Arquivo de banco de dados gerado automaticamente.
+- `/src/Api.js`: Camada de abstração de dados (Local Storage API).
+- `/public`: Ativos estáticos e manifestos.
 
 ---
 Desenvolvido por [Manno](https://github.com/mannowell)
+
