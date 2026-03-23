@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "main": "server.js",
-  "homepage": "https://mannowell.github.io/finance",
+  "homepage": "https://mannowell.github.io/Gerenciador_Finance",
   "dependencies": {
     "axios": "^1.7.9",
     "better-sqlite3": "^12.6.2",

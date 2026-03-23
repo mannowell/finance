@@ -1,14 +1,19 @@
-const API_URL = 'http://localhost:5001/api';
+const STORAGE_KEY = 'finance_transactions';
+
+const getFromStorage = () => {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
+};
+
+const saveToStorage = (transactions) => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
+};
 
 export const api = {
   async getTransactions() {
     try {
-      const response = await fetch(`${API_URL}/transactions`);
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-      }
-      return response.json();
+      // Return a copy to avoid reference issues
+      return [...getFromStorage()];
     } catch (error) {
       console.error('Erro ao buscar transações:', error);
       throw error;
@@ -17,20 +22,17 @@ export const api = {
 
   async addTransaction(transaction) {
     try {
-      const response = await fetch(`${API_URL}/transactions`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(transaction),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-      }
-
-      return response.json();
+      const transactions = getFromStorage();
+      const newTransaction = {
+        ...transaction,
+        id: Date.now(), // Use timestamp as unique ID
+        _id: Date.now() // Keep _id for frontend compatibility
+      };
+      
+      transactions.unshift(newTransaction);
+      saveToStorage(transactions);
+      
+      return newTransaction;
     } catch (error) {
       console.error('Erro ao adicionar transação:', error);
       throw error;
@@ -39,12 +41,9 @@ export const api = {
 
   async deleteTransaction(id) {
     try {
-      const response = await fetch(`${API_URL}/transactions/${id}`, {
-        method: 'DELETE',
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      const transactions = getFromStorage();
+      const filtered = transactions.filter(t => t.id !== id && t._id !== id);
+      saveToStorage(filtered);
     } catch (error) {
       console.error('Erro ao deletar transação:', error);
       throw error;
@@ -53,20 +52,18 @@ export const api = {
 
   async updateTransaction(id, transaction) {
     try {
-      const response = await fetch(`${API_URL}/transactions/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(transaction),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+      const transactions = getFromStorage();
+      const index = transactions.findIndex(t => t.id === id || t._id === id);
+      
+      if (index === -1) {
+        throw new Error('Transação não encontrada');
       }
-
-      return response.json();
+      
+      const updatedTransaction = { ...transaction, id, _id: id };
+      transactions[index] = updatedTransaction;
+      saveToStorage(transactions);
+      
+      return updatedTransaction;
     } catch (error) {
       console.error('Erro ao atualizar transação:', error);
       throw error;
@@ -87,3 +84,4 @@ export const api = {
     }
   }
 };
+
