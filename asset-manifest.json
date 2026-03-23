@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Gerenciador_Finance/static/css/main.19fd7dca.css",
+    "main.js": "/Gerenciador_Finance/static/js/main.11ba846d.js",
+    "static/js/488.9e13cf5f.chunk.js": "/Gerenciador_Finance/static/js/488.9e13cf5f.chunk.js",
+    "index.html": "/Gerenciador_Finance/index.html",
+    "main.19fd7dca.css.map": "/Gerenciador_Finance/static/css/main.19fd7dca.css.map",
+    "main.11ba846d.js.map": "/Gerenciador_Finance/static/js/main.11ba846d.js.map",
+    "488.9e13cf5f.chunk.js.map": "/Gerenciador_Finance/static/js/488.9e13cf5f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19fd7dca.css",
+    "static/js/main.11ba846d.js"
+  ]
+}
