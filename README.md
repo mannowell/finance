@@ -1,61 +1,126 @@
 # 💰 Gerenciador Financeiro
 
-Um aplicativo para controle de finanças pessoais, com suporte a múltiplas moedas (EUR/BRL), projeções futuras e uma interface sofisticada com efeito glassmorphism.
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![Express](https://img.shields.io/badge/Express-4-000000?style=flat-square&logo=express)](https://expressjs.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite)](https://www.sqlite.org/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3)](https://www.w3.org/Style/CSS/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
-> **🚀 [Ver Demonstração Online](https://mannowell.github.io/Gerenciador_Finance/)**
->
-> **Aplicativo Estático Moderno estruturado com React 19 e armazenamento seguro via `localStorage`.**
+Um aplicativo web para controle de finanças pessoais, com suporte a múltiplas moedas (EUR/BRL), projeções futuras e uma interface sofisticada com efeito glassmorphism.
+
+> 🚀 **[Ver Demonstração Online](https://mannowell.github.io/Gerenciador_Finance/)**
+
+---
 
 ## ✨ Funcionalidades
 
-- **Controle de Transações**: Adicione, edite e remova receitas e despesas com facilidade.
-- **Múltiplas Moedas**: Acompanhe seu saldo em Euro (EUR) e Real (BRL) com taxa de câmbio em tempo real.
-- **Projeções Inteligentes**: Visualize suas receitas e despesas futuras para um planejamento financeiro eficaz.
-- **Interface Premium**: Design moderno em Dark Mode com efeitos de vidro, animações suaves e total responsividade.
-- **Privacidade & Velocidade**: Utiliza `localStorage` no navegador para persistência de dados. Extremamente rápido e seguro (os dados nunca saem da sua máquina).
+- **💸 Controle de Transações** — Adicione, edite e remova receitas e despesas com facilidade.
+- **🌍 Múltiplas Moedas** — Acompanhe seu saldo em Euro (EUR) e Real (BRL) com taxa de câmbio em tempo real.
+- **📈 Projeções Inteligentes** — Visualize suas receitas e despesas futuras para um planejamento financeiro eficaz.
+- **🎨 Interface Premium** — Design moderno em Dark Mode com efeitos de vidro, animações suaves e total responsividade.
+- **🔒 Privacidade & Velocidade** — Utiliza `localStorage` no navegador para persistência de dados. Extremamente rápido e seguro (os dados nunca saem da sua máquina).
 
-## 🚀 Tecnologias Utilizadas
+---
 
-- **React 19** (Frontend SPA)
-- **Local Storage** (Persistência de dados offline)
-- **CSS3** (Custom Properties, Glassmorphism, Flexbox/Grid)
-- **React Icons** & **Date-fns**
-- **ExchangeRate-API** (Taxas de câmbio em tempo real)
+## 🛠️ Stack Tecnológica
 
-## 📦 Como Rodar Localmente
+| Camada | Tecnologia |
+|---|---|
+| **Frontend** | React 19, React Icons, Date-fns |
+| **Backend** | Express.js |
+| **Banco de Dados** | SQLite (via better-sqlite3) |
+| **Estilo** | CSS3 Custom Properties, Glassmorphism, Flexbox/Grid |
+| **API Externa** | ExchangeRate-API (taxas de câmbio em tempo real) |
 
-### Pré-requisitos
-- Node.js instalado (v18+)
+---
+
+## 📋 Pré-requisitos
+
+- [Node.js](https://nodejs.org/) (v18+)
 - npm ou yarn
 
-### Instalação
+---
 
-1. Clone o repositório:
+## 🚀 Instalação e Execução
+
+### 1. Clone o repositório:
 ```bash
 git clone https://github.com/mannowell/Gerenciador_Finance.git
 cd Gerenciador_Finance
 ```
 
-2. Instale as dependências:
+### 2. Instale as dependências:
 ```bash
 npm install
 ```
 
-### Execução
+### 3. Inicie o servidor:
+```bash
+npm start
+```
+> O servidor abrirá em [http://localhost:3000](http://localhost:3000).
 
-Para rodar o projeto localmente:
-
+### 4. (Opcional) Desenvolvimento com hot-reload:
 ```bash
 npm run client
 ```
-*O dashboard abrirá em [http://localhost:3000](http://localhost:3000).*
 
-## 🛠️ Estrutura do Projeto
-
-- `/src/components`: Componentes modulares do React.
-- `/src/Api.js`: Camada de abstração de dados (Local Storage API).
-- `/public`: Ativos estáticos e manifestos.
+### 5. Deploy para GitHub Pages:
+```bash
+npm run deploy
+```
 
 ---
-Desenvolvido por [Manno](https://github.com/mannowell)
 
+## 📁 Estrutura do Projeto
+
+```
+Gerenciador_Finance/
+├── db/                 # Banco de dados SQLite
+├── public/             # Ativos estáticos e manifestos
+├── routes/             # Rotas da API Express
+├── src/
+│   ├── components/     # Componentes modulares do React
+│   ├── Api.js          # Camada de abstração de dados (Local Storage API)
+│   └── ...             # Demais arquivos do frontend
+├── server.js           # Servidor Express
+└── package.json
+```
+
+---
+
+## 🔌 API Endpoints
+
+| Método | Endpoint | Descrição |
+|---|---|---|
+| `GET` | `/api/transactions` | Lista todas as transações |
+| `POST` | `/api/transactions` | Cria uma nova transação |
+| `PUT` | `/api/transactions/:id` | Atualiza uma transação |
+| `DELETE` | `/api/transactions/:id` | Remove uma transação |
+| `GET` | `/api/balance` | Retorna o saldo atual |
+
+> Consulte o arquivo `routes/` para ver todos os endpoints disponíveis.
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Siga os passos abaixo:
+
+1. Faça um **fork** do projeto.
+2. Crie uma **branch** para sua feature (`git checkout -b feature/minha-feature`).
+3. Faça o **commit** das suas alterações (`git commit -m 'Adiciona nova feature'`).
+4. Faça o **push** para a branch (`git push origin feature/minha-feature`).
+5. Abra um **Pull Request**.
+
+---
+
+## 👤 Autor
+
+**Wellison Oliveira** — [mannowell](https://github.com/mannowell)
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença [MIT](LICENSE).
